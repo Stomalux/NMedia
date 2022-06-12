@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_netology_48dp.xml" value="0.1" />
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1685" />
       </map>
     </option>
   </component>
