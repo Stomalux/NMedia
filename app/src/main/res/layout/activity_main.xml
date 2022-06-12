@@ -19,8 +19,8 @@
 
     <ImageView
 
-        android:layout_width="137dp"
-        android:layout_height="137dp"
+        android:layout_width="113dp"
+        android:layout_height="118dp"
         android:src="@drawable/ic_netology_48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
