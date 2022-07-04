@@ -26,7 +26,7 @@
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:lines="1"
-        android:text="@string/netology"
+        tools:text="@string/netology"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/data"
         app:layout_constraintEnd_toStartOf="@+id/ic_baseline_more_vert_24"
@@ -143,7 +143,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="@string/favoriteTextOn"
+        android:layout_marginStart="12dp"
+        tools:text="@string/favoriteText"
+
         app:layout_constraintBottom_toBottomOf="@+id/favorite"
         app:layout_constraintStart_toEndOf="@+id/favorite"
         app:layout_constraintTop_toTopOf="@+id/favorite" />
