@@ -13,27 +13,26 @@ class MainActivity : AppCompatActivity() {
 
         var post = Post(
             share = 0,
-            allLiked = 333333333333
+            allLiked = 1
         )
+        with(binding) {
+            netology.text = post.author
+            favoriteText.text = post.allLiked.toString()
+            favorite.setOnClickListener {
+                post.liked = !post.liked
+                favorite.setImageResource(
+                    if (post.liked) {
+                        post.allLiked++
+                        favoriteText.text = post.allLiked.toString()
+                        R.drawable.ic_baseline_favorite_24
 
-        binding.netology.text =post.rr
-        binding.favorite.setOnClickListener {
-            post.liked = !post.liked
-            binding.favorite.setImageResource(
-                if (post.liked) {
-                    post.allLiked ++
-
-
-
-                    R.drawable.ic_baseline_favorite_24
-
-
-
-                } else {
-                    post.allLiked --
-                    R.drawable.ic_baseline_favorite_border_24
-                }
-            )
+                    } else {
+                        post.allLiked--
+                        favoriteText.text = post.allLiked.toString()
+                        R.drawable.ic_baseline_favorite_border_24
+                    }
+                )
+            }
         }
     }
 }

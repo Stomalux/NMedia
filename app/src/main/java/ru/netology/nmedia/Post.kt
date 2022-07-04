@@ -5,6 +5,6 @@ data class Post(
     val share: Long,
     var liked: Boolean = false,
     var allLiked: Long,
-    var rr: String = "Нетология. Университет интернет-профессий."
+    var author: String = "Нетология. Университет интернет-профессий."
 
 )
