@@ -27,12 +27,20 @@ class MainActivity : AppCompatActivity() {
                         R.drawable.ic_baseline_favorite_24
 
                     } else {
-                        post.allLiked--
+                        post.allLiked --
                         favoriteText.text = Servis.formatKM(post.allLiked)
                         R.drawable.ic_baseline_favorite_border_24
                     }
                 )
             }
+
+            baselineShare.setOnClickListener {
+                post.share ++
+                shareText.text = Servis.formatKM(post.share)
+            }
+
         }
     }
+
+
 }

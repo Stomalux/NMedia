@@ -166,7 +166,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="@string/shareText"
+        tools:text="@string/shareText"
         app:layout_constraintBottom_toBottomOf="@+id/baseline_share"
         app:layout_constraintStart_toEndOf="@+id/baseline_share"
         app:layout_constraintTop_toTopOf="@+id/baseline_share"
