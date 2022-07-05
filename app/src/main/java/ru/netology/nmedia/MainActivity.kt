@@ -12,12 +12,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)                       //(R.layout.activity_main)
 
         var post = Post(
-            share = 0,
-            allLiked = 25004400
+            share = 990,
+            allLiked = 999
         )
         with(binding) {
             netology.text = post.author
-            favoriteText.text = post.allLiked.toString()
+            favoriteText.text =Servis.formatKM(post.allLiked)
+            shareText.text = Servis.formatKM(post.share)
             favorite.setOnClickListener {
                 post.liked = !post.liked
                 favorite.setImageResource(
@@ -38,9 +39,6 @@ class MainActivity : AppCompatActivity() {
                 post.share ++
                 shareText.text = Servis.formatKM(post.share)
             }
-
         }
     }
-
-
 }
