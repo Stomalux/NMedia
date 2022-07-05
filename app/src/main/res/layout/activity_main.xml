@@ -96,8 +96,8 @@
 
     <TextView
         android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="399dp"
+        android:layout_height="48dp"
         android:autoLink="web"
         android:paddingHorizontal="16dp"
         android:text="@string/line"
@@ -105,7 +105,7 @@
         android:textSize="16sp"
 
         app:layout_constraintTop_toBottomOf="@+id/missia"
-        tools:layout_editor_absoluteX="-16dp" />
+        tools:layout_editor_absoluteX="5dp" />
 
     <ImageView
         android:id="@+id/favorite"

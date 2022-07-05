@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         var post = Post(
             share = 0,
-            allLiked = 1
+            allLiked = 25004400
         )
         with(binding) {
             netology.text = post.author
@@ -23,12 +23,12 @@ class MainActivity : AppCompatActivity() {
                 favorite.setImageResource(
                     if (post.liked) {
                         post.allLiked++
-                        favoriteText.text = post.allLiked.toString()
+                        favoriteText.text = Servis.formatKM(post.allLiked)
                         R.drawable.ic_baseline_favorite_24
 
                     } else {
                         post.allLiked--
-                        favoriteText.text = post.allLiked.toString()
+                        favoriteText.text = Servis.formatKM(post.allLiked)
                         R.drawable.ic_baseline_favorite_border_24
                     }
                 )
