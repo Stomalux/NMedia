@@ -2,13 +2,13 @@ package ru.netology.nmedia
 
 data class Post(
     val id: Long = 0,
-    //var share: Long,
-    var liked: Boolean = false,
-    //var allLiked: Long,
-    var author: String = "Нетология. Университет интернет-профессий.",
-    var eye: Long = 100,
+    val author: String,// = "Нетология. Университет интернет-профессий.",
     val content: String,
     val published: String,
-    val likedByMe: Boolean,
-    var likes: Int = 1
+    val likes: Int = 0,
+    val likedByMe: Boolean = false,
+
+
+    val share: Int = 7,
+    val eye: Long = 100
 )
