@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import ru.netology.nmedia.R
 import ru.netology.nmedia.Servis
 import ru.netology.nmedia.databinding.ActivityMainBinding
+import ru.netology.nmedia.databinding.CardPostBinding
 
 import ru.netology.nmedia.viewmodel.PostViewModel
 
@@ -14,32 +15,38 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
         val viewModel by viewModels<PostViewModel>()
+////////////////////////////////////////////////////////////////////
+        viewModel.data.observe(this) { posts ->
+            binding.container.removeAllViews()
 
-        viewModel.data.observe(this) { post ->
+            posts.map { post ->
 
-            with(binding) {
-                author.text = post.author
-                published.text = post.published
-                content.text = post.content
-                likeCount.text = post.likes.toString()
-                shareText.text = post.share.toString()
-                val likeImaje = if (post.likedByMe) {
-                    R.drawable.ic_liked_24
-                } else {
-                    R.drawable.ic_like_24
-                }
-                like.setImageResource(likeImaje)
+                CardPostBinding.inflate(layoutInflater,binding.container,false).apply {
 
+                    author.text = post.author
+                    published.text = post.published
+                    content.text = post.content
+                    likeCount.text = post.likes.toString()
+                    shareText.text = post.share.toString()
+                    val likeImaje = if (post.likedByMe) {
+                        R.drawable.ic_liked_24
+                    } else {
+                        R.drawable.ic_like_24
+                    }
+                    like.setImageResource(likeImaje)
+                    like.setOnClickListener {
+                        viewModel.likeById(post.id)
+                    }
+                    shares.setOnClickListener {
+                        viewModel.sharesById(post.id)
+                    }
 
+                }.root
+            }.forEach {
+                binding.container.addView(it)
             }
-        }
-        binding.like.setOnClickListener {
-            viewModel.like()
-        }
-        binding.shares.setOnClickListener {
-            viewModel.shares()
         }
     }
 }
