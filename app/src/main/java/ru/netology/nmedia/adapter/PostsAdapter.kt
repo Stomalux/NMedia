@@ -10,7 +10,8 @@ import ru.netology.nmedia.viewmodel.PostViewModel
 
 typealias OnLikeListener = (post: Post) -> Unit
 
-class PostsAdapter (private val onLikeListener: OnLikeListener) : RecyclerView.Adapter<PostViewHolder>() {
+class PostsAdapter(private val onLikeListener: OnLikeListener) :
+    RecyclerView.Adapter<PostViewHolder>() {
 
     var list = emptyList<Post>()
         set(value) {
@@ -31,6 +32,7 @@ class PostsAdapter (private val onLikeListener: OnLikeListener) : RecyclerView.A
     override fun getItemCount(): Int = list.size
 
 }
+
 class PostViewHolder(
     private val binding: CardPostBinding,
     private val onLikeListener: OnLikeListener
@@ -45,8 +47,10 @@ class PostViewHolder(
 //            )
             if (post.likedByMe) {
                 like.setImageResource(R.drawable.ic_liked_24)
+            } else {
+                like.setImageResource(R.drawable.ic_like_24)
             }
-            like.setOnClickListener{
+            like.setOnClickListener {
                 onLikeListener(post)
             }
         }
