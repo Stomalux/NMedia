@@ -10,5 +10,6 @@
     <string name="favoriteText" translatable="false">1</string>
     <string name="eyeText" translatable="false">555</string>
     <string name="shareText" translatable="false">356</string>
+    <string name="post_menu_remove">Remove</string>
 
 </resources>

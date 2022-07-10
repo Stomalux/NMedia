@@ -1,40 +1,52 @@
 package ru.netology.nmedia.adapter
 
-import android.content.DialogInterface
+import android.nfc.NfcAdapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.Post
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
-import ru.netology.nmedia.viewmodel.PostViewModel
 
 typealias OnAllListener = (post: Post) -> Unit
+
 class PostsAdapter(
-  var onClick: OnAllListener,
-  var onShare: OnAllListener
-    ) :
+    val onClickListener: OnAllListener,
+    val onShareListener: OnAllListener,
+    val onRemovedListener: OnAllListener
+
+) :
     RecyclerView.Adapter<PostViewHolder>() {
     var list = emptyList<Post>()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding = CardPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PostViewHolder(binding, onClick ,onShare)
+        return PostViewHolder(
+            binding = binding,
+            onClickListener = onClickListener,
+            onShareListener = onShareListener,
+            onRemovedListener = onRemovedListener
+        )
     }
+
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val post = list[position]
         holder.bind(post)
     }
+
     override fun getItemCount(): Int = list.size
 }
 
 class PostViewHolder(
     private val binding: CardPostBinding,
     val onClickListener: OnAllListener,
-    val onShareListener: OnAllListener
+    val onShareListener: OnAllListener,
+    val onRemovedListener: OnAllListener
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(post: Post) {
         binding.apply {
@@ -55,6 +67,31 @@ class PostViewHolder(
                 onShareListener(post)
             }
 
+
+            menu.setOnClickListener {
+                PopupMenu(it.context, it).apply {
+                    inflate(R.menu.post_menu)
+
+                    setOnMenuItemClickListener { menuItem ->
+                        when (menuItem.itemId) {
+                            R.id.remove -> {
+                                onRemovedListener(post)
+                                return@setOnMenuItemClickListener true
+                            }
+
+
+
+                            else -> false
+
+
+                        }
+
+
+                    }
+
+
+                }.show()
+            }
 
         }
     }
