@@ -21,12 +21,22 @@ class MainActivity : AppCompatActivity() {
 ////////////////////////////////////////////////////////////////////
 
         val adapter = PostsAdapter {
+           // viewModel.sharesById(it.id) //////////////////////////////////////////
             viewModel.likeById(it.id)
         }
         binding.list.adapter = adapter
         viewModel.data.observe(this){ posts ->
             adapter.list = posts
         }
+
+
+//        val adapterSharesListner = PostsAdapter {
+//            viewModel.sharesById(it.id)
+//        }
+//        binding.list.adapter = adapterSharesListner
+//        viewModel.data.observe(this){ posts ->
+//            adapter.list = posts
+//        }
 
 
 

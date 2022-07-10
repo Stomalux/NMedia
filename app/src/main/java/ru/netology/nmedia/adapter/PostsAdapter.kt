@@ -8,10 +8,10 @@ import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.viewmodel.PostViewModel
 
-typealias OnLikeListener = (post: Post) -> Unit
-typealias OnSharesListner = (post: Post) -> Unit
+typealias OnAllListener = (post: Post) -> Unit
 
-class PostsAdapter(private val onLikeListener: OnLikeListener) :
+
+class PostsAdapter(private val onAllListener: OnAllListener) :
     RecyclerView.Adapter<PostViewHolder>() {
 
     var list = emptyList<Post>()
@@ -22,7 +22,7 @@ class PostsAdapter(private val onLikeListener: OnLikeListener) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding = CardPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PostViewHolder(binding, onLikeListener)
+        return PostViewHolder(binding, onAllListener)
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
@@ -36,7 +36,7 @@ class PostsAdapter(private val onLikeListener: OnLikeListener) :
 
 class PostViewHolder(
     private val binding: CardPostBinding,
-    private val onLikeListener: OnLikeListener
+    private val onAllListener: OnAllListener
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(post: Post) {
         binding.apply {
@@ -48,20 +48,20 @@ class PostViewHolder(
             shareText.text = post.share.toString()
 
 
-//            like.setImageResource(
-//                if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
-//            )
+
             if (post.likedByMe) {
                 like.setImageResource(R.drawable.ic_liked_24)
             } else {
                 like.setImageResource(R.drawable.ic_like_24)
             }
             like.setOnClickListener {
-                onLikeListener(post)
+                onAllListener(post)
             }
-            shares.setOnClickListener {
-                onLikeListener(post)
-            }
+//            shares.setOnClickListener {
+//                onAllListener(post)
+//            }
+
+
 
         }
     }
