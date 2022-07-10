@@ -79,7 +79,8 @@ class InMemoryPostRepository : PostRepository {
         posts = posts.map {
             if (it.id != id) it else it.copy(
                 likedByMe = !it.likedByMe,
-                likes = if (it.likedByMe) it.likes - 1 else it.likes + 1
+                likes = if (it.likedByMe) it.likes - 1
+                else it.likes + 1
             )
         }
         data.value = posts
@@ -87,7 +88,8 @@ class InMemoryPostRepository : PostRepository {
 
     override fun sharesById(id: Long) {
         posts = posts.map {
-            if (it.id != id) it else it.copy(share = it.share + 1)
+            if (it.id != id) it
+            else it.copy(share = it.share + 1)
         }
         data.value = posts
     }
