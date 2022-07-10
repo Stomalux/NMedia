@@ -9,6 +9,7 @@ import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.viewmodel.PostViewModel
 
 typealias OnLikeListener = (post: Post) -> Unit
+typealias OnSharesListner = (post: Post) -> Unit
 
 class PostsAdapter(private val onLikeListener: OnLikeListener) :
     RecyclerView.Adapter<PostViewHolder>() {
@@ -42,6 +43,11 @@ class PostViewHolder(
             author.text = post.author
             published.text = post.published
             content.text = post.content
+
+            likeCount.text = post.likes.toString()
+            shareText.text = post.share.toString()
+
+
 //            like.setImageResource(
 //                if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
 //            )
@@ -53,6 +59,10 @@ class PostViewHolder(
             like.setOnClickListener {
                 onLikeListener(post)
             }
+            shares.setOnClickListener {
+                onLikeListener(post)
+            }
+
         }
     }
 }
