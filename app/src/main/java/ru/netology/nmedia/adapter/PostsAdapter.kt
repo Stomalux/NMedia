@@ -1,5 +1,6 @@
 package ru.netology.nmedia.adapter
 
+import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -32,8 +33,8 @@ class PostsAdapter(
 
 class PostViewHolder(
     private val binding: CardPostBinding,
-    var onClick: OnAllListener,
-    var onShare: OnAllListener
+    val onClickListener: OnAllListener,
+    val onShareListener: OnAllListener
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(post: Post) {
         binding.apply {
@@ -48,10 +49,10 @@ class PostViewHolder(
                 like.setImageResource(R.drawable.ic_like_24)
             }
             like.setOnClickListener {
-                onClick(post)
+                onClickListener(post)
             }
             shares.setOnClickListener {
-                onShare(post)
+                onShareListener(post)
             }
 
 
