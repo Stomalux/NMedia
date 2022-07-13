@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_baseline_expand_circle_down_24.xml" value="0.268" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.171" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.381" />
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.268" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.381" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.381" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_netology_48dp.xml" value="0.1" />

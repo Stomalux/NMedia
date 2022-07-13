@@ -1,7 +1,7 @@
 package ru.netology.nmedia
 
 data class Post(
-    val id: Long = 0,
+    var id: Long = 0,
     val author: String,// = "Нетология. Университет интернет-профессий.",
     val content: String,
     val published: String,
@@ -10,5 +10,5 @@ data class Post(
 
 
     val share: Int = 7,
-    val eye: Long = 100
+    val eye: Int = 100
 )
