@@ -1,9 +1,13 @@
 package ru.netology.nmedia.adapter
+
+import android.view.View
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
+import ru.netology.nmedia.util.AndroidUtils
 import kotlin.math.round
 
 
@@ -44,6 +48,7 @@ class PostViewHolder(
                                 onInteractionListener.onRemove(post)
                                 true
                             }
+
                             R.id.edit -> {
                                 onInteractionListener.onEdit(post)
                                 true
@@ -56,6 +61,7 @@ class PostViewHolder(
         }
     }
 }
+
 object Servis {
 
     fun formatKM(number: Int): String {

@@ -11,8 +11,8 @@
     <string name="eyeText" translatable="false">555</string>
     <string name="shareText" translatable="false">356</string>
     <string name="post_menu_remove">Remove</string>
-    <string name="post_text" translatable="false">Post Test</string>
-    <string name="empty_post_error" translatable="false">Empti post</string>
+    <string name="post_text">Post Test</string>
+    <string name="empty_post_error">Empti post</string>
     <string name="post_menu_change">Change</string>
 
 </resources>

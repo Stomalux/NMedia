@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,9 +12,10 @@
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@id/toolsTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="-111dp"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/card_post" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -29,16 +29,15 @@
         android:id="@+id/content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/post_text"
-        android:inputType="textMultiLine"
         android:background="@android:color/transparent"
-        android:padding="@dimen/common_spacing"
+        android:hint="@string/post_text"
         android:importantForAutofill="no"
-        app:layout_constraintTop_toTopOf="@id/toolsTop"
+        android:inputType="textMultiLine"
+        android:padding="@dimen/common_spacing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/save"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="@id/toolsTop" />
 
     <ImageButton
         android:id="@+id/save"
@@ -47,9 +46,31 @@
         android:layout_marginTop="@dimen/common_spacing"
         android:background="@android:color/transparent"
 
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/content"
+        app:srcCompat="@drawable/is_save_48" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="17dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:constraint_referenced_ids="undo"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="55dp"/>
+
+    <ImageButton
+        android:id="@+id/undo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/is_save_48"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/content"
+        app:srcCompat="@drawable/ic_undo_48" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,5 +10,7 @@
     <string name="missia">Но самое важное остается с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше, целиться выше, бежать быстрее. Наша миссия - помочь встать на путь роста и начать цепочку перемен</string>
     <string name="post_menu_remove">Удалить</string>
     <string name="post_menu_change">Изменить</string>
+    <string name="empty_post_error" translatable="false">пустой пост</string>
+    <string name="post_text" translatable="false">Введите текст</string>
 
 </resources>

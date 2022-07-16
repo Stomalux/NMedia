@@ -1,9 +1,14 @@
 package ru.netology.nmedia.activity
 
 import android.os.Bundle
+import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.lifecycle.LiveData
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.R
 import ru.netology.nmedia.adapter.OnInteractionListener
@@ -19,10 +24,13 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         val viewModel by viewModels<PostViewModel>()
         val adapter = PostsAdapter(object : OnInteractionListener {
             override fun onEdit(post: Post) {
+                binding.group.visibility = VISIBLE
                 viewModel.edit(post)
+
             }
 
             override fun onLike(post: Post) {
@@ -49,23 +57,35 @@ class MainActivity : AppCompatActivity() {
             with(binding.content) {
                 requestFocus()
                 setText(post.content)
+
+            }
+        }
+        binding.undo.setOnClickListener {
+            with(binding.content) {
+                binding.group.visibility = GONE
+                setText("")
+                clearFocus()
+                AndroidUtils.hideKeyboard(this)
             }
         }
 
         binding.save.setOnClickListener {
             with(binding.content) {
+
                 if (text.isNullOrBlank()) {
                     Toast.makeText(
                         this@MainActivity,
                         context.getString(R.string.empty_post_error),
                         Toast.LENGTH_SHORT
                     ).show()
+                    binding.group.visibility = VISIBLE
                     return@setOnClickListener
                 }
 
                 viewModel.changeContent(text.toString())
                 viewModel.save()
 
+                binding.group.visibility = GONE
                 setText("")
                 clearFocus()
                 AndroidUtils.hideKeyboard(this)
@@ -73,33 +93,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-//       val adapter = PostsAdapter(
-//           onClickListener = {
-//               viewModel.likeById(it.id)
-//           },
-//           onShareListener = {
-//               viewModel.sharesById(it.id)
-//          },
-//          onRemovedListener = {
-//              viewModel.removeById(it.id)
-//           }
-//
-//      )
-
-//       binding.save.setOnClickListener {
-//           if (binding.content.text.isNullOrBlank()) {
-//              Toast.makeText(it.context,getString(R.string.empty_post_error) , Toast.LENGTH_SHORT)
-//                   .show()
-//              return@setOnClickListener
-//          }
-//         val text = binding.content.text.toString()
-//            viewModel.editContent(text)
-//            viewModel.save()
-//
-//           binding.content.clearFocus()
-//           AndroidUtils.hideKeyboard(binding.content)
-//            binding.content.setText("")
-
-//        }
-
-
