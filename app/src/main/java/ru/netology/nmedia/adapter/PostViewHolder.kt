@@ -23,13 +23,17 @@ class PostViewHolder(
             published.text = post.published
             content.text = post.content
 
-            likeCount.text = Servis.formatKM(post.likes)
-            shareText.text = Servis.formatKM(post.share)
+            // likeCount.text = Servis.formatKM(post.likes)
+            //  shareText.text = Servis.formatKM(post.share)
             eyeText.text = post.eye.toString()
 
-            like.setImageResource(
-                if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
-            )
+            like.isChecked = post.likedByMe
+            //           like.text = "${post.likes}"
+            like.text = Servis.formatKM(post.likes)
+            shares.text = Servis.formatKM(post.share)
+//            like.setImageResource(
+//                if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
+//            )
 
             like.setOnClickListener {
                 onInteractionListener.onLike(post)
