@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.R
 import ru.netology.nmedia.adapter.OnInteractionListener
@@ -17,6 +18,7 @@ import ru.netology.nmedia.databinding.ActivityMainBinding
 import ru.netology.nmedia.util.AndroidUtils
 
 import ru.netology.nmedia.viewmodel.PostViewModel
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +63,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.undo.setOnClickListener {
+            viewModel.clear()
             with(binding.content) {
+                              //edited.value = empty
                 binding.group.visibility = GONE
                 setText("")
                 clearFocus()
