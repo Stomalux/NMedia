@@ -9,5 +9,6 @@ data class Post(
 
     val likes: Int = 0,
     val share: Int = 7,
-    val eye: Int = 100
+    val view: Int = 100,
+    val video: String? = null,
 )

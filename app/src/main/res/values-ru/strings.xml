@@ -12,5 +12,6 @@
     <string name="post_menu_change">Изменить</string>
     <string name="empty_post_error" translatable="false">пустой пост</string>
     <string name="post_text" translatable="false">Введите текст</string>
+    <string name="chooser_share_post">Поделиться</string>
 
 </resources>

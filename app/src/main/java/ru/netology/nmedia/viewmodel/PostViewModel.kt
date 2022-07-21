@@ -50,5 +50,7 @@ class PostViewModel : ViewModel() {
     fun sharesById(id: Long) = repository.sharesById(id)
 
 
+
+
     fun clear(){ edited.value = empty }
 }
