@@ -39,27 +39,27 @@
         app:layout_constraintBottom_toBottomOf="@+id/list"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="17dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        app:constraint_referenced_ids="undo"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="55dp" />
+<!--    <androidx.constraintlayout.widget.Group-->
+<!--        android:id="@+id/group"-->
+<!--        android:layout_width="17dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:visibility="gone"-->
+<!--        app:constraint_referenced_ids="undo"-->
+<!--        tools:layout_editor_absoluteX="67dp"-->
+<!--        tools:layout_editor_absoluteY="55dp" />-->
 
-    <ImageButton
-        android:id="@+id/undo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
+<!--    <ImageButton-->
+<!--        android:id="@+id/undo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="88dp"-->
 
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/content"
-        app:srcCompat="@drawable/ic_undo_48" />
+<!--        android:background="@android:color/transparent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toEndOf="@id/content"-->
+<!--        app:srcCompat="@drawable/ic_undo_48" />-->
     <!--    <EditText-->
     <!--        android:id="@+id/content"-->
     <!--        android:layout_width="0dp"-->
