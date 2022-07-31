@@ -1,5 +1,5 @@
 package ru.netology.nmedia.activity
-
+// после отката в новой ветке не фрагменты
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
