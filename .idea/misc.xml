@@ -21,10 +21,15 @@
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_netology_48dp.xml" value="0.1" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/ic_undo_24.xml" value="0.2315" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/drawable/is_save_48.xml" value="0.277" />
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/activity_app.xml" value="0.35507246376811596" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/activity_intent_handler.xml" value="0.27291666666666664" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/activity_new_post.xml" value="0.19927536231884058" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/card_post.xml" value="0.33" />
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/fragment_blank_post.xml" value="0.36666666666666664" />
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/fragment_feed.xml" value="0.28396739130434784" />
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/fragment_fullscreen_post.xml" value="0.36666666666666664" />
+        <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/fragment_new_post.xml" value="0.36666666666666664" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/proba.xml" value="0.49609375" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/layout/save.xml" value="0.22395833333333334" />
         <entry key="..\:/ProjectsAndroid/NMedia/app/src/main/res/menu/menu_undo.xml" value="0.22395833333333334" />

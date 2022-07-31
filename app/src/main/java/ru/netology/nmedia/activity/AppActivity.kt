@@ -13,12 +13,12 @@ class AppActivity : AppCompatActivity(R.layout.activity_app) {
         super.onCreate(savedInstanceState)
 
         intent?.let {
-            if (it.action != Intent.ACTION_SEND) {
+           if (it.action != Intent.ACTION_SEND) {
                 return@let
             }
 
             val text = it.getStringExtra(Intent.EXTRA_TEXT)
-            if (text?.isNotBlank() != true) {
+            if (text?.isNotBlank() == true) {
                 return@let
             }
             intent.removeExtra(Intent.EXTRA_TEXT)
