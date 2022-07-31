@@ -9,6 +9,8 @@
     app:defaultNavHost="true"
     app:navGraph="@navigation/nav_main"
     tools:context=".activity.AppActivity" />
+
+
 <!--<androidx.constraintlayout.widget.ConstraintLayout-->
 <!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->

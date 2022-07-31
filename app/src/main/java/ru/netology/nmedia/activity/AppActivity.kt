@@ -1,5 +1,5 @@
 package ru.netology.nmedia.activity
-
+//31.07.22 20-36
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
