@@ -2,9 +2,12 @@ package ru.netology.nmedia.adapter
 
 import android.view.View
 import android.widget.PopupMenu
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
+import ru.netology.nmedia.databinding.FragmentFeedBinding
 import ru.netology.nmedia.dto.Post
 import kotlin.math.round
 
@@ -38,6 +41,7 @@ class PostViewHolder(
                 binding.videoGroup.visibility = View.VISIBLE
             }
             like.setOnClickListener {
+                println("Likes cliked")
                 onInteractionListener.onLike(post)
             }
 
@@ -65,8 +69,16 @@ class PostViewHolder(
                 }.show()
             }
             video.setOnClickListener { onInteractionListener.onVideo(post) }
+            root.setOnClickListener {
+                println("root klik")
+                onInteractionListener.onContent(post)
+            }
+            //content.setOnClickListener { onInteractionListener.onContent(post) }
+            //binding.content.setOnClickListener {  findNavController().navigate(R.id.action_feedFragment_to_onePostFragment) }
         }
     }
+
+
 }
 
 object Servis {

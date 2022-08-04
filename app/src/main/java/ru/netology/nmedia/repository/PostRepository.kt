@@ -1,6 +1,7 @@
 package ru.netology.nmedia.repository
 
 import androidx.lifecycle.LiveData
+import androidx.navigation.NavController
 import ru.netology.nmedia.dto.Post
 
 interface PostRepository {
@@ -12,5 +13,6 @@ interface PostRepository {
     fun sharesById(id: Long)
 
 
+    ///   fun findPostById(postId: Long): Post?
 
 }

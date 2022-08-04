@@ -52,7 +52,9 @@ class PostViewModel(application: Application) : AndroidViewModel(application){
 
     fun sharesById(id: Long) = repository.sharesById(id)
 
-
+//    fun findPostById(postId: Long): Post? {
+//        return repository.findPostById(postId)
+//    }
 
 
     fun clear(){ edited.value = empty }

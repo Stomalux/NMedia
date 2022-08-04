@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nmedia.R
+import ru.netology.nmedia.activity.NewPostFragment.Companion.textArg
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.adapter.OnInteractionListener
 import ru.netology.nmedia.adapter.PostsAdapter
@@ -26,6 +27,7 @@ import ru.netology.nmedia.viewmodel.PostViewModel
 
 
 class FeedFragment : Fragment() {
+
     val viewModel by viewModels<PostViewModel>(ownerProducer = ::requireParentFragment)
 
     override fun onCreateView(
@@ -98,6 +100,22 @@ class FeedFragment : Fragment() {
                 val intentVideo = Intent(Intent.ACTION_VIEW, Uri.parse(post.video))
                 startActivity(intentVideo)
             }
+
+            override fun onContent(post: Post) {
+                  findNavController().navigate(R.id.action_feedFragment_to_onePostFragment)
+            }
+            override fun onEdit(post: Post) {
+                viewModel.edit(post)
+                findNavController().navigate(
+                    R.id.action_feedFragment_to_editPostFragment,
+                    Bundle().apply {
+                        textArg = post.content
+                    }
+                )
+            }
+
+
+
         })
         binding.list.adapter = adapter
         viewModel.data.observe(viewLifecycleOwner)        // viewModel.data.observe(this)
@@ -115,6 +133,10 @@ class FeedFragment : Fragment() {
             findNavController().navigate(R.id.action_feedFragment_to_newPostFragment4)
         }
 
+        binding.onepost.setOnClickListener {  findNavController().navigate(R.id.action_feedFragment_to_onePostFragment) }
+ //       binding.list.setOnClickListener {
+ //           findNavController().navigate(R.id.onePostFragment)
+  //      }
 
 
 

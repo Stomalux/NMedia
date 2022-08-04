@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/common_spacing"
+    tools:context=".activity.OnePostFragment">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/posts_avatar_size"
+        android:layout_height="@dimen/posts_avatar_size"
+        android:layout_marginBottom="@dimen/common_spacing"
+        android:src="@drawable/ic_netology_48dp"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_netology_48dp"/>
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:ellipsize="end"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@+id/published"
+        app:layout_constraintEnd_toStartOf="@id/menu"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="@sample/posts.json/data/author" />
+
+    <TextView
+        android:id="@+id/published"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:layout_marginBottom="@dimen/common_spacing"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintEnd_toStartOf="@id/menu"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toBottomOf="@id/author"
+        tools:text="@sample/posts.json/data/published" />
+
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/menu"-->
+    <!--        android:layout_width="14dp"-->
+    <!--        android:layout_height="18dp"-->
+    <!--        android:background="@android:color/transparent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/published"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/author"-->
+    <!--        app:srcCompat="@drawable/ic_baseline_more_vert_24" />-->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_spacing"
+
+        app:icon="@drawable/ic_more_vert_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.AppTheme.IconButton"
+        />
+
+
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="avatar,published,menu" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:lineSpacingMultiplier="1.5"
+        android:paddingTop="@dimen/common_spacing"
+        android:paddingBottom="@dimen/common_spacing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        tools:text="@sample/posts.json/data/content" />
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/video_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="video" />
+
+    <ImageView
+        android:id="@+id/video"
+        android:layout_width="279dp"
+        android:layout_height="183dp"
+
+        android:src="@drawable/video_cr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="video,content" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/like"-->
+    <!--        android:layout_width="36dp"-->
+    <!--        android:layout_height="27dp"-->
+    <!--        android:layout_marginStart="28dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/content"-->
+    <!--        app:srcCompat="@drawable/ic_like_24" />-->
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/footer"
+        app:icon="@drawable/ic_like_24dp"
+        tools:checked="@sample/posts.json/data/likedByMe"
+        tools:text="@sample/posts.json/data/likes"
+        style="@style/Widget.AppTheme.LikeButton"
+        />
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/shares"-->
+    <!--        android:layout_width="33dp"-->
+    <!--        android:layout_height="34dp"-->
+    <!--        android:layout_marginStart="36dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/like"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/like"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/like"-->
+    <!--        app:layout_constraintVertical_bias="1.0"-->
+    <!--        app:srcCompat="@drawable/ic_baseline_share_24" />-->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/shares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        app:iconPadding = "4dp"
+        app:layout_constraintStart_toEndOf="@+id/like"
+        app:layout_constraintTop_toBottomOf="@id/footer"
+        app:icon="@drawable/ic_baseline_share_24"
+        tools:text="@sample/posts.json/data/likes"
+        style="@style/Widget.AppTheme.IconButton"
+        />
+
+
+    <ImageView
+        android:id="@+id/eyeImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/like"
+        app:layout_constraintEnd_toStartOf="@+id/eyeText"
+        app:layout_constraintTop_toTopOf="@+id/like"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_baseline_remove_red_eye_24" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/likeCount"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+
+    <!--        android:layout_marginStart="12dp"-->
+    <!--        tools:text="@string/favoriteText"-->
+
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/like"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/like"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/like" />-->
+
+    <TextView
+        android:id="@+id/eyeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        tools:text="@string/eyeText"
+        app:layout_constraintBottom_toBottomOf="@+id/eyeImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/eyeImage"
+        app:layout_constraintVertical_bias="0.384" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/shareText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        tools:text="@string/shareText"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/shares"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/shares"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/shares"-->
+    <!--        app:layout_constraintVertical_bias="0.466" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".activity.MainActivity">-->
+
+<!--    &lt;!&ndash;    <androidx.constraintlayout.widget.Barrier&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/toolsTop"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:barrierDirection="top"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:constraint_referenced_ids="content,save" />&ndash;&gt;-->
+
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/list"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.0"-->
+<!--        tools:listitem="@layout/card_post" />-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/create"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="end|bottom"-->
+
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:src="@drawable/ic_baseline_add_24"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/list"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        tools:ignore="SpeakableTextPresentCheck" />-->
+
+<!--&lt;!&ndash;    <androidx.constraintlayout.widget.Group&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/group"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="17dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:visibility="gone"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:constraint_referenced_ids="undo"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteX="67dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteY="55dp" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <ImageButton&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/undo"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginBottom="88dp"&ndash;&gt;-->
+
+<!--&lt;!&ndash;        android:background="@android:color/transparent"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintHorizontal_bias="0.0"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintStart_toEndOf="@id/content"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:srcCompat="@drawable/ic_undo_48" />&ndash;&gt;-->
+<!--    &lt;!&ndash;    <EditText&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="0dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:background="@android:color/transparent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:hint="@string/post_text"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:importantForAutofill="no"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:inputType="textMultiLine"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:padding="@dimen/common_spacing"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintEnd_toStartOf="@id/save"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintTop_toTopOf="@id/toolsTop" />&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    <ImageButton&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/save"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_marginTop="@dimen/common_spacing"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:background="@android:color/transparent"&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintStart_toEndOf="@id/content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:srcCompat="@drawable/is_save_48" />&ndash;&gt;-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
