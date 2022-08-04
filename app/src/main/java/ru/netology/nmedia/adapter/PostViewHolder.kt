@@ -2,12 +2,9 @@ package ru.netology.nmedia.adapter
 
 import android.view.View
 import android.widget.PopupMenu
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
-import ru.netology.nmedia.databinding.FragmentFeedBinding
 import ru.netology.nmedia.dto.Post
 import kotlin.math.round
 
@@ -21,32 +18,31 @@ class PostViewHolder(
     fun bind(post: Post) {
         binding.apply {
             author.text = post.author
+
             published.text = post.published
+
             content.text = post.content
 
-            // likeCount.text = Servis.formatKM(post.likes)
-            //  shareText.text = Servis.formatKM(post.share)
             eyeText.text = post.view.toString()
 
             like.isChecked = post.likedByMe
-            //           like.text = "${post.likes}"
+
             like.text = Servis.formatKM(post.likes)
+
             shares.text = Servis.formatKM(post.share)
-//            like.setImageResource(
-//                if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
-//            )
+
             if (post.video == null) {
                 binding.videoGroup.visibility = View.GONE
             } else {
                 binding.videoGroup.visibility = View.VISIBLE
             }
             like.setOnClickListener {
-              //  println("Likes cliked")
+
                 onInteractionListener.onLike(post)
             }
 
             shares.setOnClickListener {
-               onInteractionListener.onShare(post)
+                onInteractionListener.onShare(post)
             }
 
             menu.setOnClickListener {
@@ -70,15 +66,11 @@ class PostViewHolder(
             }
             video.setOnClickListener { onInteractionListener.onVideo(post) }
             root.setOnClickListener {
-              //  println("root klik")
+                //  println("root klik")
                 onInteractionListener.onContent(post)
             }
-            //content.setOnClickListener { onInteractionListener.onContent(post) }
-            //binding.content.setOnClickListener {  findNavController().navigate(R.id.action_feedFragment_to_onePostFragment) }
         }
     }
-
-
 }
 
 object Servis {

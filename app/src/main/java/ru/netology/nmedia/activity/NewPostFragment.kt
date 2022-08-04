@@ -1,9 +1,6 @@
 package ru.netology.nmedia.activity
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +15,7 @@ import ru.netology.nmedia.viewmodel.PostViewModel
 class NewPostFragment : Fragment() {
 
     companion object {
-   //     private const val TEXT_KEY = "TEXT_KEY"
+
 
         var Bundle.textArg: String?  by StringArg //    var Bundle.textArg: String?
  //           set(value) = putString(TEXT_KEY, value)
