@@ -15,7 +15,12 @@
             app:destination="@id/newPostFragment" />
         <action
             android:id="@+id/action_feedFragment_to_onePostFragment"
-            app:destination="@id/onePostFragment" />
+            app:destination="@id/onePostFragment" >
+
+        <argument
+            android:name="postId"
+            app:argType="integer" />
+        </action>
         <action
             android:id="@+id/action_feedFragment_to_editPostFragment"
             app:destination="@id/editPostFragment" />
@@ -33,6 +38,9 @@
         <action
             android:id="@+id/action_onePostFragment_to_editPostFragment"
             app:destination="@id/editPostFragment" />
+        <argument
+            android:name="postId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/editPostFragment"

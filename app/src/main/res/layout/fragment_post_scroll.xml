@@ -6,5 +6,8 @@
     tools:context=".activity.OnePostFragment" >
     <include
         android:id="@+id/post_detail"
-        layout="@layout/card_post" />
+        layout="@layout/card_post"
+
+
+        />
 </ScrollView>
