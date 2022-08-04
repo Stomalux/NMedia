@@ -41,7 +41,7 @@ class PostViewHolder(
                 binding.videoGroup.visibility = View.VISIBLE
             }
             like.setOnClickListener {
-                println("Likes cliked")
+              //  println("Likes cliked")
                 onInteractionListener.onLike(post)
             }
 
@@ -70,7 +70,7 @@ class PostViewHolder(
             }
             video.setOnClickListener { onInteractionListener.onVideo(post) }
             root.setOnClickListener {
-                println("root klik")
+              //  println("root klik")
                 onInteractionListener.onContent(post)
             }
             //content.setOnClickListener { onInteractionListener.onContent(post) }

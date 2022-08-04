@@ -102,7 +102,8 @@ class FeedFragment : Fragment() {
             }
 
             override fun onContent(post: Post) {
-                  findNavController().navigate(R.id.action_feedFragment_to_onePostFragment)
+                val action = FeedFragmentDirections.actionFeedFragmentToOnePostFragment(post.id.toInt())
+                  findNavController().navigate(action)
             }
             override fun onEdit(post: Post) {
                 viewModel.edit(post)
@@ -133,7 +134,7 @@ class FeedFragment : Fragment() {
             findNavController().navigate(R.id.action_feedFragment_to_newPostFragment4)
         }
 
-        binding.onepost.setOnClickListener {  findNavController().navigate(R.id.action_feedFragment_to_onePostFragment) }
+  //      binding.onepost.setOnClickListener {  findNavController().navigate(R.id.action_feedFragment_to_onePostFragment) }
  //       binding.list.setOnClickListener {
  //           findNavController().navigate(R.id.onePostFragment)
   //      }

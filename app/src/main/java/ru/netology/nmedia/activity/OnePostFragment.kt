@@ -31,13 +31,12 @@ import ru.netology.nmedia.viewmodel.PostViewModel
 
 class OnePostFragment : Fragment() {
 
-  //  val viewModel by viewModels<PostViewModel>()
+    //  val viewModel by viewModels<PostViewModel>()
     val viewModel by viewModels<PostViewModel>(ownerProducer = ::requireParentFragment)
     //   private val args: OnePostFragment by navArgs<OnePostFragment>()
 
 
-    val args by navArgs<OnePostFragment>()
-
+    val args by navArgs<OnePostFragmentArgs>()
 
 
     override fun onCreateView(
@@ -93,12 +92,15 @@ class OnePostFragment : Fragment() {
             }
 
             override fun onContent(post: Post) {
-                findNavController().navigate(R.id.action_feedFragment_to_onePostFragment)
+               findNavController().navigate(R.id.action_feedFragment_to_onePostFragment)
             }
+
             override fun onEdit(post: Post) {
                 viewModel.edit(post)
                 findNavController().navigate(
-                    R.id.action_feedFragment_to_editPostFragment,
+
+                    R.id.action_onePostFragment_to_editPostFragment,
+                  //  R.id.action_feedFragment_to_editPostFragment,
                     Bundle().apply {
                         textArg = post.content
                     }
@@ -106,11 +108,16 @@ class OnePostFragment : Fragment() {
             }
 
 
+        })
+        viewModel.data.observe(viewLifecycleOwner) { posts ->
+            val post = posts.find { it.id == args.postId.toLong() } ?: run {
+                findNavController().navigateUp()
+                return@observe
+            }
+            viewHolder.bind(post)
+        }
 
-        } )
 
-
-        viewHolder.bind()
 
         return binding.root
 
@@ -195,7 +202,7 @@ class OnePostFragment : Fragment() {
 //        }
         //  binding.con.setOnClickListener {
         //  newPostLauncher.launch()
-        return binding.root
+
     }
 
 
