@@ -18,7 +18,7 @@ class PostDaoImpl(private val db: SQLiteDatabase) : PostDao {
             
              ${PostColumns.COLUMN_SHARE} INTEGER NOT NULL DEFAULT 0,
              ${PostColumns.COLUMN_VIEW} INTEGER NOT NULL DEFAULT 0,
-             ${PostColumns.COLUMN_VIDEO} TEXT NOT NULL DEFAULT " 1"
+             ${PostColumns.COLUMN_VIDEO} TEXT NOT NULL DEFAULT "https://www.youtube.com/watch?v=zzV2aML_zNg"
             
             
         );
@@ -109,6 +109,7 @@ class PostDaoImpl(private val db: SQLiteDatabase) : PostDao {
     }
 
     override fun likeById(id: Long) {
+        println("likeById")
         db.execSQL(
             """
            UPDATE posts SET
@@ -120,6 +121,7 @@ class PostDaoImpl(private val db: SQLiteDatabase) : PostDao {
     }
 
     override fun removeById(id: Long) {
+        println("removeById")
         db.delete(
             PostColumns.TABLE,
             "${PostColumns.COLUMN_ID} = ?",
@@ -128,19 +130,13 @@ class PostDaoImpl(private val db: SQLiteDatabase) : PostDao {
     }
 
     override fun sharesById(id: Long) {
-
-
-
-
-
-//        db.execSQL(
-//            """
-//           UPDATE posts SET
-//               share = share + CASE WHEN shareById THEN +1  END
-//
-//           WHERE id = ?;
-//        """.trimIndent(), arrayOf(id)
- //       )
+        println("sharesById")
+        db.execSQL(
+            """
+           UPDATE posts SET
+               share = share + 1   WHERE id = ?;
+        """.trimIndent(), arrayOf(id)
+        )
     }
 
     private fun map(cursor: Cursor): Post {

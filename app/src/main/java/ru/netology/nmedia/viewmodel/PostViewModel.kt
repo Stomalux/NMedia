@@ -17,7 +17,7 @@ private val empty = Post(
     likedByMe = false,
     published = ""
 )
-
+      var tempPost: Post? = null
 
 class PostViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -41,6 +41,7 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun edit(post: Post) {
+        println(post.id)
         edited.value = post
     }
 
@@ -48,10 +49,12 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
 
     fun changeContent(content: String) {
         val text = content.trim()
+        println(text)
         if (edited.value?.content == text) {
             return
         }
         edited.value = edited.value?.copy(content = text)
+        println(edited.value.toString())
     }
 
     fun likeById(id: Long) = repository.likeById(id)
