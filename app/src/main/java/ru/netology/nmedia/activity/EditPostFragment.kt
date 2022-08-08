@@ -1,5 +1,5 @@
 package ru.netology.nmedia.activity
-
+//08-08-22  20.51
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
