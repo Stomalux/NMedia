@@ -18,7 +18,7 @@ class PostDaoImpl(private val db: SQLiteDatabase) : PostDao {
             
              ${PostColumns.COLUMN_SHARE} INTEGER NOT NULL DEFAULT 0,
              ${PostColumns.COLUMN_VIEW} INTEGER NOT NULL DEFAULT 0,
-             ${PostColumns.COLUMN_VIDEO} TEXT NULL,
+             ${PostColumns.COLUMN_VIDEO} TEXT NOT NULL DEFAULT " 1"
             
             
         );
@@ -128,7 +128,19 @@ class PostDaoImpl(private val db: SQLiteDatabase) : PostDao {
     }
 
     override fun sharesById(id: Long) {
-        TODO("Not yet implemented")
+
+
+
+
+
+//        db.execSQL(
+//            """
+//           UPDATE posts SET
+//               share = share + CASE WHEN shareById THEN +1  END
+//
+//           WHERE id = ?;
+//        """.trimIndent(), arrayOf(id)
+ //       )
     }
 
     private fun map(cursor: Cursor): Post {
