@@ -8,9 +8,6 @@ import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.repository.PostRepository
 import ru.netology.nmedia.repository.PostRepositoryImpl
 
-//import ru.netology.nmedia.repository.PostRepositoryFileImpl
-//import ru.netology.nmedia.repository.PostRepositorySQLiteImpl
-
 
 private val empty = Post(
     id = 0,
@@ -27,7 +24,7 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
 //        PostRepositoryFileImpl(application)    для файла  и  ---- для мемори        /// PostRepositoryInMemoryImpl()
 
     private val repository: PostRepository = PostRepositoryImpl (                          // PostRepositorySQLiteImpl(
-        AppDb.getInstance (context = application).postDao()                 ///(application).postDao
+        AppDb.getInstance (context = application).postDao()                 ///  для SQL (application).postDao
     )
 
     ////////////////////////////////////////////////////////////////////////////////////////
