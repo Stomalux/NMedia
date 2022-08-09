@@ -46,11 +46,4 @@ interface PostDao {
     )
     fun sharesById(id: Long)
 
-
-//    fun getAll(): List<Post>
-//    fun save(post: Post): Post
-//    fun likeById(id: Long)
-//    fun removeById(id: Long)
-//    fun sharesById(id: Long)
-
 }
