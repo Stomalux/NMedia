@@ -14,5 +14,9 @@
     <string name="post_text" translatable="false">Введите текст</string>
     <string name="chooser_share_post">Поделиться</string>
     <string name="post_input">Текст Контент</string>
+    <string name="channel_remote_name">Уведомления с сервера</string>
+    <string name="channel_remote_description">Уведомления с удалённого сервера</string>
+    <string name="google_play_unavailable">Google Api Недоступно</string>
+    <string name="notification_user_liked">%1$s поставил лайк посту %2$s</string>
 
 </resources>
