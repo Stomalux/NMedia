@@ -1,5 +1,5 @@
 package ru.netology.nmedia.activity
-//Pushes 09-08-22 17-50
+//Pushes 13-08-22 9-00
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
