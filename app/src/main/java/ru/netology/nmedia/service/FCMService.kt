@@ -35,7 +35,7 @@ class FCMService : FirebaseMessagingService() {
 
     override fun onMessageReceived(message: RemoteMessage) {
 
-      //  try {
+   try {
 
 
             message.data[action]?.let {
@@ -55,8 +55,8 @@ class FCMService : FirebaseMessagingService() {
                 }
             }
 
-    //    } catch (e :Exception ) {  //  message.data[action]?.let { action }
-  //          return}
+     } catch (e :Exception ) {
+          return}
 
     }
     override fun onNewToken(token: String) {

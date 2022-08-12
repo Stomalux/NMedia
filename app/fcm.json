@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "netologia-6dd07",
+  "private_key_id": "79d5a74188eb8ee0cd4316692e75ba3d50312565",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDKei1wylrEZTZz\n/ivemitqjbY/6O9IQCCwYPyrg5q5vfBqGhvFq4LcgwL22imFP8s+Y/1brMyg9xjY\nX7zAnbZYEkYE+PCtu9sEUzYznak7hKbX9ENSCzEFxr9AfJ4GLJU/+y4ttA97HOYo\nxa/BYhmpt+E4WiCIaZkoL2SuWniTePuB7lDHajeJHXEm+jmZIOnEtccgpC5kj5MR\nHQxXc23+SP9sS9t5dyL3umdsr+P715grUBhM6DXt46ljKDeLVmbQX0e9dO/jip8V\nHvkj6hzpGa2+lH68VO1gXS3+AqLMyQQTh5jIG/qe2UBD2tyzeOA1iJaVCeQ+cNtG\n8bBQx6MpAgMBAAECggEABMHgeHJ2Cyrvn8O8kc3ghZqPyipLGPunaPgrvPc/duwa\nDnwk4+eW5bR5qNrRDULwSmZ8s584mEhGAADRMAYPRzwirgeQAXJU/+HZTQGAJ5hY\nd+F9hXDNiuZeZFb+kC7oUNOyLuZjU2VcmQpQCgSn4rTMfg+hYmMiHe9tzP+Y2VTR\nyij9YqHPmiS/4JroDe16wxh0KmugEMQZbQa7Lc3YAep21WzqiENjgbG8uOATOlQh\nW+V4DQVKsqFfujQ8nWbfV+I2jkh4v4SoVLvsxOSwgt7HjhhU0gCRWv2/Ekq2q2Uy\nVeLgft648WgThj1YC0nPFa23Oy9PQDVhqrUvMjvdCQKBgQD7isB6EVnncAr5TCfz\nEZUzcaBiNkflJpxoitFOzWwervJQ2MCGyd2q0RQmzqywM87wlIKDK3XlcL3Yx4M1\nr7KPLouX6v/MnrX6YxkA5zsWRkoOkfNtzxbqF5s81u/wA09C+im/KDtqOWavXe5u\npJ28yhDrCBecwfCK9O55v6QmZQKBgQDOENGIor7y+hAqNi9Zl8cBPHcUP7XJjQ7t\nC8UZBvaFoY4HrYyAaHT1vYmrxodMw0qgGnKYn6hknkZ6ssJvrALQfwP3HfWBs5kD\nAYEpZQjKP7toKnWFsNsk99TbSL8/FdzilcVOWP1wl9GQCsUsz1g1YIcsmy6OY8Nc\nlJfp4hDLdQKBgDTwmdvXBQXpldWsCohkvfMKygeBhxYaTzbNaIneQBAhH8yWIcb8\ne1O1Fzmnq76V2MrXZrR2lCSK2tnh+6Jz7O+niyeZBOcqy//7lUqUX+IrPvDcFNCa\nkicIetqOHgd0mtzsy5Z4wDB2Dj+AVGsi6DPQj0j39gg+5QJJ1Fr5U3HlAoGAXtco\nyP02azgiRntH0bFkWzJMEBq+fTQZ4YngPgORZLGVX/1FRDhPVGbWvSOTVAYyC3wA\nsDQTWbPq9j/d8220oedDmPHF89sIGnUP0FB6+jLY+zlHe6+JPPt/kSlrNArI7dRG\nyid1BeQqBGSgmV4Y2ABEVohZphlOagbN4Ew2tJ0CgYEAyvnwSqfCD+Zjo7XYogIH\nbSuR4bE6ilMyiLqB0xPAIJXu+OU4uqpNJjRjA5+f6cHJswBBfjAHqAsYtGy1n0WY\nPuVYY+4g8rDtRwvOTRFZLdndNLkxAQg7aHRIXNaozMZYDaBRZXjnXDcBNsNpiEq1\njgTcXiPbGEACjObgQmFTgSw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ryfrm@netologia-6dd07.iam.gserviceaccount.com",
+  "client_id": "109474485432034490249",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ryfrm%40netologia-6dd07.iam.gserviceaccount.com"
+}
